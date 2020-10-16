@@ -118,7 +118,8 @@
                     android:text="Lihat Semua"
                     android:textColor="@color/primaryTextColor"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:onClick="launchSecondActivity"/>
 
             </RelativeLayout>
 

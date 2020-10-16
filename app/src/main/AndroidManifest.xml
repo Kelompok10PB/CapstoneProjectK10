@@ -10,6 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".DetailActivity"
+            android:label = "Detail Activity"
+            android:parentActivityName=".LihatSemuaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.capstoneprojectk10.LihatSemuaActivity" />
+        </activity>
+
+        <activity android:name=".LihatSemuaActivity"
+            android:label = "Lihat Semua Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.capstoneprojectk10.MainActivity" />
+        </activity>
+
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
