@@ -2,8 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.capstoneprojectk10.LihatSemuaActivity"
     style="@style/parent.contentLayout">
 
     <androidx.core.widget.NestedScrollView
@@ -24,7 +25,8 @@
                     style="@style/viewParent.headerText"
                     android:layout_alignParentLeft="true"
                     android:maxLines="2"
-                    android:text="Stay Home" />
+                    android:text="Update Kasus Covid-19 per Provinsi"
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -32,7 +34,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="5dp"
-                    android:text="Jaga Kesehatan" />
+                    android:text="*klik salah satu untuk detail"
+                    android:textSize="12sp" />
             </RelativeLayout>
 
 
@@ -44,13 +47,13 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_alignParentTop="true"
                     android:layout_marginBottom="20dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardPreventCornerOverlap="false"
-                    app:cardBackgroundColor="@color/designMainColor"
                     android:minHeight="200dp"
-                    android:layout_alignParentTop="true">
+                    app:cardBackgroundColor="@color/designMainColor"
+                    app:cardCornerRadius="16dp"
+                    app:cardPreventCornerOverlap="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -66,16 +69,8 @@
                             android:padding="10dp">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Update Kasus Covid-19 di Indonesia"
-                                android:textColor="@color/whiteBodyColor"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="120dp"
+                                android:layout_height="34dp"
                                 android:layout_marginTop="15dp"
                                 android:text="6 Oktober 2020"
                                 android:textColor="@color/whiteBodyColor"
@@ -84,41 +79,9 @@
 
                         </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="true"
-                            android:elevation="44dp"
-                            android:src="@drawable/hero" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_margin="10dp">
-
-                <TextView
-                    style="@style/viewParent.headerText"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Update"
-                    android:textSize="18sp" />
-
-                <TextView
-                    style="@style/viewParent"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="Lihat Semua"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:onClick="launchSecondActivity"/>
 
             </RelativeLayout>
 
@@ -134,9 +97,37 @@
                 <include layout="@layout/card_popular_courses"/>
                 <include layout="@layout/card_popular_courses"/>
                 <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+                <include layout="@layout/card_popular_courses"/>
+
+
+
             </LinearLayout>
+
+            <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
