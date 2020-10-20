@@ -31,15 +31,15 @@
             android:text="Provinsi"
             android:textColor="#818181"
             android:textStyle="bold"
-            android:textSize="13sp"
-            android:layout_marginLeft="16dp" />
+            android:textSize="13sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/content_rounded"
             android:orientation="horizontal"
-            android:weightSum="3" >
+            android:weightSum="3"
+            android:onClick="launchSecondActivity" >
 
 
             <LinearLayout
@@ -109,6 +109,7 @@
                     android:text="12"
                     android:textColor="@color/meninggal"
                     android:textSize="16sp" />
+
             </LinearLayout>
 
         </LinearLayout>
