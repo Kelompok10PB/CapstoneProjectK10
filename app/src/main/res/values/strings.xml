@@ -1,9 +1,81 @@
-<resources>
-    <string name="app_name">CapstoneProjectK10</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Covid-19</string>
+
+    <!--    GLOBAL STRING ASSET-->
+    <string name="null_text" translatable="false">null</string>
+    <string name="loading_text" tools:ignore="TypographyEllipsis">Memuat...</string>
+
+    <!--    WEB VIEW STRING ASSET-->
+    <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Laman sedang dimuat...</string>
 
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!--    FRAGMENT HOME STRING ASSET-->
+    <string name="home_country_ina" translatable="false">INA</string>
+    <string name="home_header">Apakah kamu merasa sakit?</string>
+    <string name="home_desc">Jika kamu merasa sakit dengan gejala covid-19, segera hubungi layanan darurat agar segera ditangani.</string>
+    <string name="home_call">Telepon</string>
+    <string name="home_website" translatable="false">Website</string>
+    <string name="home_news_header">Berita</string>
+    <string name="home_global_data">Data Global</string>
+    <string name="home_confirmed">Terkonfirmasi</string>
+    <string name="home_death">Meninggal</string>
+    <string name="home_recovered">Sembuh</string>
+    <string name="home_preventive_header">Pencegahan</string>
+    <string name="home_preventive1">Jaga Jarak Sosial</string>
+    <string name="home_preventive2">Sering Cuci Tangan</string>
+    <string name="home_preventive3">Pakailah Masker</string>
+    <string name="home_donate_header">Donasi sekarang!</string>
+    <string name="home_donate_desc">Ulurkan tanganmu untuk mereka yang terdampak oleh pandemi ini</string>
+    <string name="home_test_header">Tes sekarang!</string>
+    <string name="home_test_desc">Ikuti langkah-langkah sesuai dengan instruksi</string>
 
-    <string name="action_settings">Settings</string>
+    <!--    FRAGMENT INFO STRING ASSET-->
+    <string name="info_title">Informasi</string>
+    <string name="info_desc" translatable="false">Versi 1.1 © Covid-19 App 2020</string>
+    <string name="info_desc2">Dikembangkan oleh</string>
+
+
+    <!--    FRAGMENT MAPS STRING ASSET-->
+    <string name="maps_title">Kasus Per Provinsi</string>
+
+    <!--    FRAGMENT STATS STRING ASSET -->
+    <string name="stat_title">Statistik</string>
+    <string name="stat_subtitle">Total Kasus Hingga Hari Ini</string>
+    <string name="stat_positive">Positif</string>
+    <string name="stat_death">Meninggal</string>
+    <string name="stat_cured">Sembuh</string>
+    <string name="stat_monitoring">ODP</string>
+    <string name="stat_patient">PDP</string>
+
+
+    <!--    INFO WINDOW PROV STRING ASSET-->
+    <string name="info_window_prov_cases">"Kasus: "</string>
+    <string name="info_window_prov_death">"Meninggal: "</string>
+    <string name="info_window_prov_cured">"Sembuh: "</string>
+    <string name="info_window_prov_treated">"Dirawat: "</string>
+    <string name="info_window_prov_subtitle">Dari seluruh kasus di Indonesia</string>
+    <string name="info_window_prov_subtitle2">Data Kasus Berdasarkan:</string>
+    <string name="info_window_prov_sex">Jenis Kelamin:</string>
+    <string name="info_window_prov_age">Umur:</string>
+
+    <!--    PROVINCE LAYOUT STRING ASSET-->
+    <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Cari provinsi ...</string>
+
+    <!--    PREVENTIVE STRING ASSET-->
+    <string name="about">
+       Ini Aplikasi
+    </string>
+    <string name="social_distancing">
+       Jaga Jarak
+    </string>
+    <string name="wash_hand">
+      Cuci Tangan
+    </string>
+    <string name="wear_mask">
+        Pakai Masker
+    </string>
+    <string name="menu_home">Beranda</string>
+    <string name="menu_stats">Statistik</string>
+    <string name="menu_maps">Peta</string>
+    <string name="menu_info">Informasi</string>
 </resources>
