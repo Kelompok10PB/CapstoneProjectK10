@@ -24,10 +24,6 @@
     <string name="home_preventive1">Jaga Jarak Sosial</string>
     <string name="home_preventive2">Sering Cuci Tangan</string>
     <string name="home_preventive3">Pakailah Masker</string>
-    <string name="home_donate_header">Donasi sekarang!</string>
-    <string name="home_donate_desc">Ulurkan tanganmu untuk mereka yang terdampak oleh pandemi ini</string>
-    <string name="home_test_header">Tes sekarang!</string>
-    <string name="home_test_desc">Ikuti langkah-langkah sesuai dengan instruksi</string>
 
     <!--    FRAGMENT INFO STRING ASSET-->
     <string name="info_title">Informasi</string>
@@ -72,7 +68,7 @@
       Cuci Tangan
     </string>
     <string name="wear_mask">
-        Pakai Masker
+        Gunakan Masker
     </string>
     <string name="menu_home">Beranda</string>
     <string name="menu_stats">Statistik</string>
