@@ -11,8 +11,8 @@
 
     <!--    FRAGMENT HOME STRING ASSET-->
     <string name="home_country_ina" translatable="false">INA</string>
-    <string name="home_header">Apakah kamu merasa sakit?</string>
-    <string name="home_desc">Jika kamu merasa sakit dengan gejala covid-19, segera hubungi layanan darurat agar segera ditangani.</string>
+    <string name="home_header">Apakah kamu merasa sesuatu yang aneh?</string>
+    <string name="home_desc">Jika kamu merasakan sesuatu berkaitan dengan gejala covid-19, segera hubungi layanan darurat agar segera ditangani.</string>
     <string name="home_call">Telepon</string>
     <string name="home_website" translatable="false">Website</string>
     <string name="home_news_header">Berita</string>
@@ -28,14 +28,14 @@
     <!--    FRAGMENT INFO STRING ASSET-->
     <string name="info_title">Informasi</string>
     <string name="info_desc" translatable="false">Versi 1.1 © Covid-19 App 2020</string>
-    <string name="info_desc2">Dikembangkan oleh</string>
+    <string name="info_desc2">Dikembangkan oleh K10</string>
 
 
     <!--    FRAGMENT MAPS STRING ASSET-->
     <string name="maps_title">Kasus Per Provinsi</string>
 
     <!--    FRAGMENT STATS STRING ASSET -->
-    <string name="stat_title">Statistik</string>
+    <string name="stat_title">Kasus Covid-19 Di Indonesia</string>
     <string name="stat_subtitle">Total Kasus Hingga Hari Ini</string>
     <string name="stat_positive">Positif</string>
     <string name="stat_death">Meninggal</string>
