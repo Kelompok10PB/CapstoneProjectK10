@@ -19,6 +19,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/rounded_header">
 
                 <TableLayout
@@ -27,6 +30,7 @@
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="20dp"
                     tools:ignore="UselessParent">
+
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"

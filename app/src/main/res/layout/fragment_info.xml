@@ -14,7 +14,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_header"
+            android:background="@drawable/rounded_header2"
             android:orientation="vertical">
 
             <LinearLayout

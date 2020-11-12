@@ -4,8 +4,8 @@
     <string name="loading_text" tools:ignore="TypographyEllipsis">Loading...</string>
     <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Loading the page...</string>
 
-    <string name="home_header">Are you felling sick?</string>
-    <string name="home_desc">If you feel sick with any of covid-19 symptoms, please call immediately for help.</string>
+    <string name="home_header">Are you felling Something wrong?</string>
+    <string name="home_desc">If you feel like that with any of covid-19 symptoms, please call immediately for help.</string>
     <string name="home_call">Call Now</string>
     <string name="home_news_header">News</string>
     <string name="home_preventive_header">Prevention</string>
@@ -16,7 +16,7 @@
     <string name="info_desc2">Developed by</string>
 
     <string name="maps_title">Case per Province</string>
-    <string name="stat_title">Statistic</string>
+    <string name="stat_title">Total Covid-19 Case in Indonesia</string>
     <string name="stat_subtitle">Cases Summary</string>
     <string name="stat_positive">Positive</string>
     <string name="stat_death">Death</string>

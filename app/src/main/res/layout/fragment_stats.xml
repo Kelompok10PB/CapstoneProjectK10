@@ -7,10 +7,9 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
-    <com.nirhart.parallaxscroll.views.ParallaxScrollView
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        app:parallax_factor="1.5">
+        android:layout_height="fill_parent">
 
 
             <LinearLayout
@@ -311,11 +310,16 @@
 
                     </TableRow>
 
+                    <ImageView
+                        android:layout_width="324dp"
+                        android:layout_height="239dp"
+                        android:gravity="center"
+                        android:paddingTop="4dp"
+                        android:src="@drawable/stay"
+                        tools:ignore="ContentDescription" />
                 </TableLayout>
 
             </LinearLayout>
-
-
-    </com.nirhart.parallaxscroll.views.ParallaxScrollView>
+    </LinearLayout>
 
 </LinearLayout>
