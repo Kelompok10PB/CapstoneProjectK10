@@ -1,15 +1,10 @@
 package com.example.capstoneprojectk10.repo;
 
-import android.app.Activity;
-import android.app.Application;
-
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.capstoneprojectk10.api.newsData.NewsData;
 import com.example.capstoneprojectk10.api.newsData.NewsDataFetch;
 import com.example.capstoneprojectk10.api.newsData.NewsDataHolder;
-import com.example.capstoneprojectk10.util.LoadLocale;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

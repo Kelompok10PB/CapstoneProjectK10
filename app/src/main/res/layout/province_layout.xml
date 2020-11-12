@@ -55,6 +55,17 @@
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="6dp"
+        android:text="*Klik Nama Provinsi Dibawah untuk detail"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_marginLeft="22dp"
+        android:textStyle="italic" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/prov_rv"
         android:layout_width="fill_parent"

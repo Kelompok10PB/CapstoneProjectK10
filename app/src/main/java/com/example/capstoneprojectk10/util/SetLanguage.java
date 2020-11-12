@@ -5,9 +5,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
-/**
- * Extending the Alert Dialog
- */
 public class SetLanguage extends AlertDialog {
     /**
      * This class will passing the Alert Dialog to set the language

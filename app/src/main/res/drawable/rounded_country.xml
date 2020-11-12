@@ -2,17 +2,13 @@
 <ripple
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:color="#88FFFFFF"
+    android:color="#22000000"
     tools:targetApi="lollipop">
 
     <item>
         <shape
             android:shape="rectangle">
-            <gradient
-                android:startColor="#ffa6ac"
-                android:endColor="#56549e"
-                android:angle="135"
-                />
+            <solid android:color="#FFFFFF"/>
             <corners android:radius="32dp" />
         </shape>
     </item>

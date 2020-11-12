@@ -5,9 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.capstoneprojectk10.api.newsData.NewsData;
-import com.example.capstoneprojectk10.api.provData.ProvData;
 import com.example.capstoneprojectk10.repo.NewsDataRepository;
-import com.example.capstoneprojectk10.repo.ProvDataRepository;
 
 public class NewsDataViewModel extends ViewModel {
     private MutableLiveData<NewsData> newsData;

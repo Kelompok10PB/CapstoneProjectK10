@@ -3,7 +3,7 @@
     <string name="app_name">Covid-19</string>
     <string name="loading_text" tools:ignore="TypographyEllipsis">Loading...</string>
     <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Loading the page...</string>
-
+    <string name="home_title">Stay Safe</string>
     <string name="home_header">Are you felling Something wrong?</string>
     <string name="home_desc">If you feel like that with any of covid-19 symptoms, please call immediately for help.</string>
     <string name="home_call">Call Now</string>
@@ -14,7 +14,7 @@
     <string name="home_preventive3">Wear a Face Mask</string>
     <string name="info_title">Information</string>
     <string name="info_desc2">Developed by</string>
-
+    <string name="info_lang_title">Language</string>
     <string name="maps_title">Case per Province</string>
     <string name="stat_title">Total Covid-19 Case in Indonesia</string>
     <string name="stat_subtitle">Cases Summary</string>
@@ -34,7 +34,7 @@
     <string name="info_window_prov_age">"Age: "</string>
     <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Search Province...</string>
     <string name="menu_home">Home</string>
-    <string name="menu_stats">Statistic</string>
+    <string name="menu_stats">Total</string>
     <string name="menu_maps">Maps</string>
     <string name="menu_info">Information</string>
 
@@ -42,23 +42,6 @@
     <string name="about">
  App
     </string>
-    <string name="social_distancing">
-        Social Distancing
-    </string>
-
-
-    <string name="wash_hand">
-       Wash Hand
-    </string>
-
-
-    <string name="wear_mask">
-       Wear Mask
-    </string>
-    <string name="home_global_data">Global Cases</string>
-    <string name="home_confirmed">Confirmed</string>
-    <string name="home_death">Death</string>
-    <string name="home_recovered">Recovered</string>
 
 
 </resources>
