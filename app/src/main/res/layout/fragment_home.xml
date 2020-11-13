@@ -203,7 +203,7 @@
                         </LinearLayout>
 
                     </TableRow>
-
+c
                 </TableLayout>
 
             </RelativeLayout>
@@ -213,13 +213,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
-
+                <include
+                    layout="@layout/fragment_stats" />
 
                 <TableRow
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="0dp"
                     android:layout_marginRight="20dp">
 
                     <TextView
@@ -342,7 +343,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="1dp"
                     android:layout_marginRight="20dp">
 
                     <TextView
@@ -356,11 +357,12 @@
                         android:textStyle="bold" />
 
                 </TableRow>
+
                 <com.facebook.shimmer.ShimmerFrameLayout
                     android:id="@+id/shimmer_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:visibility="gone"
                     shimmer:shimmer_duration="1000">
 
@@ -380,6 +382,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp" />
+
+
             </TableLayout>
 
         </LinearLayout>

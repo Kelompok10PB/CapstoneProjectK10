@@ -16,13 +16,11 @@
     <string name="info_desc2">Developed by</string>
     <string name="info_lang_title">Language</string>
     <string name="maps_title">Case per Province</string>
-    <string name="stat_title">Total Covid-19 Case in Indonesia</string>
-    <string name="stat_subtitle">Cases Summary</string>
+    <string name="stat_subtitle">Cases Summary in Indonesia</string>
     <string name="stat_positive">Positive</string>
     <string name="stat_death">Death</string>
     <string name="stat_cured">Cured</string>
     <string name="stat_monitoring">Monitoring</string>
-    <string name="stat_patient">Patient</string>
 
     <string name="info_window_prov_cases">"Cases: "</string>
     <string name="info_window_prov_death">"Death: "</string>
@@ -34,7 +32,6 @@
     <string name="info_window_prov_age">"Age: "</string>
     <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Search Province...</string>
     <string name="menu_home">Home</string>
-    <string name="menu_stats">Total</string>
     <string name="menu_maps">Maps</string>
     <string name="menu_info">Information</string>
 
