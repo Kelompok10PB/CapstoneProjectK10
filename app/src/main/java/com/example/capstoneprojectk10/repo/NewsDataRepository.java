@@ -36,7 +36,7 @@ public class NewsDataRepository {
     public MutableLiveData<NewsData> getNewsData() {
         MutableLiveData<NewsData> NewsData = new MutableLiveData<>();
         isLoading.setValue(true);
-        newsDataHolder.getNews("699fa5b4ab4d49aab02a36bc88eb6cde")
+        newsDataHolder.getNews("e5f81d8d68a64a548b575220c8f95f08")
                 .enqueue(new Callback<NewsData>() {
             @Override
             public void onResponse(Call<NewsData> call, Response<NewsData> response) {
