@@ -55,6 +55,8 @@ public class HomeFragment extends Fragment {
     LinearLayout mCallButton;
     @BindView(id.home_website_button)
     LinearLayout mWebsiteButton;
+    @BindView(R.id.info_language_button)
+    LinearLayout mLanguage;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Nullable
@@ -90,8 +92,6 @@ public class HomeFragment extends Fragment {
                 getContext().startActivity(intent);
             }
         });
-
-
 
         // THE DATA FETCHING PROCESS
         NewsDataViewModel newsDataViewModel;
@@ -139,10 +139,16 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        mLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new SetLanguage(getContext(), getActivity());
+            }
+        });
+
         return view;
 
     }
-
 
     private void hideLoading() {
         mNewsShimmer.stopShimmer();
@@ -155,8 +161,5 @@ public class HomeFragment extends Fragment {
         mNewsRecyclerView.setVisibility(View.GONE);
     }
 
-    private String numberSeparator(int value) {
-        return String.valueOf(NumberFormat.getNumberInstance(Locale.ITALY).format(value));
-    }
 
 }

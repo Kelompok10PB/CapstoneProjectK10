@@ -1,18 +1,12 @@
 package com.example.capstoneprojectk10.api.newsData;
 
-import android.content.res.Resources;
-
-import com.bumptech.glide.load.engine.Resource;
-import com.example.capstoneprojectk10.R;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import retrofit2.http.Url;
 
 public interface NewsDataHolder {
 
-    @GET("v2/top-headlines?country=id&q=covid-19")
+    @GET("v2/top-headlines?country=id")
     Call<NewsData> getNews(@Query("apiKey") String apiKey);
 
     @GET("v2/top-headlines?language=en&q=covid-19&sortBy=popularity")

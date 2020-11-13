@@ -5,9 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.capstoneprojectk10.api.provData.ProvData;
-import com.example.capstoneprojectk10.api.regulerData.RegulerData;
 import com.example.capstoneprojectk10.repo.ProvDataRepository;
-import com.example.capstoneprojectk10.repo.RegulerDataRepository;
 
 public class ProvDataViewModel extends ViewModel {
     private MutableLiveData<ProvData> provData;

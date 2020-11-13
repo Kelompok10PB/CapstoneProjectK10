@@ -1,7 +1,5 @@
 package com.example.capstoneprojectk10.repo;
 
-import android.util.Log;
-
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.capstoneprojectk10.api.provData.ProvData;

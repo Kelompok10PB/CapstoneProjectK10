@@ -14,7 +14,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
-import com.github.mikephil.charting.charts.LineChart;
 import com.example.capstoneprojectk10.api.regulerData.RegulerData;
 import com.example.capstoneprojectk10.util.LoadLocale;
 import com.example.capstoneprojectk10.vm.RegulerDataViewModel;
@@ -33,12 +32,12 @@ public class StatsFragment extends Fragment {
     @BindView(R.id.stat_kasus_meninggal) TextView mStatDeathCases;
     @BindView(R.id.stat_kasus_sumbuh) TextView mStatCuredCases;
     @BindView(R.id.stat_kasus_odp) TextView mStatMonitoringCases;
-    @BindView(R.id.stat_kasus_pdp) TextView mStatPatientCases;
     @BindView(R.id.stat_added_pos) TextView mStatAddedPositive;
     @BindView(R.id.stat_added_men) TextView mStatAddedDeath;
     @BindView(R.id.stat_added_sem) TextView mStatAddedCured;
     @BindView(R.id.stat_updated_date) TextView mUpdatedDate;
     @BindView(R.id.stat_box_shimmer) ShimmerFrameLayout mBoxShimmer;
+    @BindView(R.id.stat_box_layout) TableLayout mBoxLayout;
 
     @Nullable
     @Override
@@ -46,8 +45,6 @@ public class StatsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
         ButterKnife.bind(this, view);
         loadLocale = new LoadLocale(getActivity());
-
-        // ========= REGULAR DATA FETCHING
 
         RegulerDataViewModel regulerDataViewModel;
 
@@ -71,6 +68,7 @@ public class StatsFragment extends Fragment {
                 showRegulerData(regulerData);
             }
         });
+
         return view;
     }
 
@@ -80,7 +78,6 @@ public class StatsFragment extends Fragment {
         int mMeninggal = regulerData.getUpdatedData().getTotalCases().getmMeninggal();
         int mSembuh = regulerData.getUpdatedData().getTotalCases().getmSembuh();
         int mODP = regulerData.getDerivativeData().getmODP();
-        int mPDP = regulerData.getDerivativeData().getmPDP();
         int mAddedPos = regulerData.getUpdatedData().getNewCases().getmPositif();
         int mAddedMen = regulerData.getUpdatedData().getNewCases().getmMeninggal();
         int mAddedSem = regulerData.getUpdatedData().getNewCases().getmSembuh();
@@ -90,7 +87,6 @@ public class StatsFragment extends Fragment {
         mStatDeathCases.setText(numberSeparator(mMeninggal));
         mStatCuredCases.setText(numberSeparator(mSembuh));
         mStatMonitoringCases.setText(numberSeparator(mODP));
-        mStatPatientCases.setText(numberSeparator(mPDP));
         mStatAddedPositive.setText("+" + numberSeparator(mAddedPos));
         mStatAddedDeath.setText("+" + numberSeparator(mAddedMen));
         mStatAddedCured.setText("+" + numberSeparator(mAddedSem));
@@ -105,10 +101,12 @@ public class StatsFragment extends Fragment {
 
     private void hideRegularDataLoading() {
         mBoxShimmer.setVisibility(View.GONE);
+        mBoxLayout.setVisibility(View.VISIBLE);
     }
 
     private void showRegularDataLoading() {
         mBoxShimmer.setVisibility(View.VISIBLE);
+        mBoxLayout.setVisibility(View.GONE);
     }
 
     private String numberSeparator(int value) {

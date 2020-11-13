@@ -16,10 +16,9 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         new Handler().postDelayed(new Runnable() {
-            /*
+             /*
              * menampilkan splash screen dengan timer
              */
-
             @Override
             public void run() {
                 // method ini akan di eksekusi setelah timer selesai

@@ -2,7 +2,6 @@ package com.example.capstoneprojectk10.api.provData;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import androidx.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
@@ -150,14 +149,6 @@ public class ProvData implements Parcelable {
 
     public double getCurrentData() {
         return currentData;
-    }
-
-    public double getMissingData() {
-        return missingData;
-    }
-
-    public int getUnidentifiedProv() {
-        return unidentifiedProv;
     }
 
     public List<ProvListData> getProvListDataLists() {

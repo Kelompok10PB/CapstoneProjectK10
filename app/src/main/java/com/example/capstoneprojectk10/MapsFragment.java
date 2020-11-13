@@ -1,38 +1,11 @@
 package com.example.capstoneprojectk10;
 
-import android.animation.Animator;
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.InputType;
-import android.text.TextWatcher;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -40,31 +13,19 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SnapHelper;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.interfaces.datasets.IPieDataSet;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -75,10 +36,6 @@ import com.example.capstoneprojectk10.api.provData.ProvData;
 import com.example.capstoneprojectk10.util.LoadLocale;
 import com.example.capstoneprojectk10.vm.ProvDataViewModel;
 
-import org.w3c.dom.Text;
-import org.xmlpull.v1.XmlPullParser;
-
-import java.io.Serializable;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -298,15 +255,10 @@ public class MapsFragment extends Fragment implements
 
     private void setupBottomSheet(LinearLayout mProvDetailedCaseButton, ProvData provData) {
         Toast mToast = Toast.makeText(getContext(), "", Toast.LENGTH_LONG);
-//        BottomSheetMapsDialog bottomSheetMapsDialog = new BottomSheetMapsDialog();
 
         mProvDetailedCaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), bottomSheetMapsDialog.getClass());
-//                intent.putExtra("provData", provData);
-//                startActivity(intent);
-//                bottomSheetMapsDialog.show(getFragmentManager(),"BottomSheet");
                 mToast.setText("Other data coming soon!");
                 mToast.show();
             }
@@ -329,9 +281,6 @@ public class MapsFragment extends Fragment implements
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(LAT, LNG), ZOOM);
 
         final Handler handler = new Handler();
-
-        //Tricky part that collapse the slide up panel after 200ms (the keyboard already hide)
-        //Can't find another approach to do the same
 
         handler.postDelayed(new Runnable() {
             @Override
@@ -372,15 +321,10 @@ public class MapsFragment extends Fragment implements
             mProvOld = view.findViewById(R.id.info_window_prov_age_old);
             mProvGrandParents = view.findViewById(R.id.info_window_prov_age_grandparent);
 
-            //remove the "m" from getId() to returning integer
-
             String id = marker.getId();
             int convId = Integer.parseInt(id.replaceAll("[^\\d.]", "")) - arraySizeBefore;
 
             ProvData.ProvListData provListData = filteredList.get(convId);
-
-            //HANDLING ERROR CAUSE NULL __ NOT THE EFFECTIVE WAY
-            //BECAUSE WE FORCE TO PUT THE FIRST ageList DATA
 
             ArrayList<Integer> ageList = new ArrayList<>();
 
