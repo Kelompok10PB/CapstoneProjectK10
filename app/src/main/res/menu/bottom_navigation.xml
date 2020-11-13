@@ -5,12 +5,6 @@
         android:id="@+id/nav_home"
         android:title="@string/menu_home"
         android:icon="@drawable/icon_home" />
-
-    <item
-        android:id="@+id/nav_stats"
-        android:title="@string/menu_stats"
-        android:icon="@drawable/icon_stats" />
-
     <item
         android:id="@+id/nav_maps"
         android:title="@string/menu_maps"

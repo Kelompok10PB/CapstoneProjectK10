@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,8 @@ import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
+import com.example.capstoneprojectk10.api.regulerData.RegulerData;
+import com.example.capstoneprojectk10.vm.RegulerDataViewModel;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.example.capstoneprojectk10.adapter.NewsAdapter;
 import com.example.capstoneprojectk10.api.newsData.NewsData;
@@ -47,6 +51,21 @@ public class HomeFragment extends Fragment {
     private ArrayList<String> mNewsTitle = new ArrayList<>();
     private ArrayList<String> mNewsURL = new ArrayList<>();
 
+    private LoadLocale loadLocale;
+
+    @BindView(R.id.stat_kasus_aktif)
+    TextView mStatPositiveCases;
+    @BindView(R.id.stat_kasus_meninggal) TextView mStatDeathCases;
+    @BindView(R.id.stat_kasus_sumbuh) TextView mStatCuredCases;
+    @BindView(R.id.stat_kasus_odp) TextView mStatMonitoringCases;
+    @BindView(R.id.stat_added_pos) TextView mStatAddedPositive;
+    @BindView(R.id.stat_added_men) TextView mStatAddedDeath;
+    @BindView(R.id.stat_added_sem) TextView mStatAddedCured;
+    @BindView(R.id.stat_updated_date) TextView mUpdatedDate;
+    @BindView(R.id.stat_box_shimmer) ShimmerFrameLayout mBoxShimmer;
+    @BindView(R.id.stat_box_layout)
+    TableLayout mBoxLayout;
+
     @BindView(id.shimmer_layout)
     ShimmerFrameLayout mNewsShimmer;
     @BindView(id.news_recycler_view)
@@ -65,7 +84,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(layout.fragment_home, container, false);
         Toast mToast = Toast.makeText(getContext(), "", Toast.LENGTH_LONG);
         ButterKnife.bind(this, view);
-
+        loadLocale = new LoadLocale(getActivity());
         LoadLocale loadLocale = new LoadLocale(getActivity());
         Timber.d("LoadLocale%s", loadLocale.getLocale());
 
@@ -91,6 +110,32 @@ public class HomeFragment extends Fragment {
                 intent.putExtra("passingTitle", "Portal Resmi Gugus Tugas Covid-19");
                 getContext().startActivity(intent);
             }
+        });
+
+        // REGULAR DATA FETCHING
+        loadLocale = new LoadLocale(getActivity());
+        RegulerDataViewModel regulerDataViewModel;
+
+        regulerDataViewModel = ViewModelProviders.of(this).get(RegulerDataViewModel.class);
+        regulerDataViewModel.init();
+
+        regulerDataViewModel.getLoading().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                if (aBoolean) {
+                    showRegularDataLoading();
+                } else {
+                    hideRegularDataLoading();
+                }
+            }
+        });
+
+        regulerDataViewModel.getRegulerData().observe(this, new Observer<RegulerData>() {
+            @Override
+            public void onChanged(RegulerData regulerData) {
+                showRegulerData(regulerData);
+            }
+
         });
 
         // THE DATA FETCHING PROCESS
@@ -150,6 +195,42 @@ public class HomeFragment extends Fragment {
 
     }
 
+    private void showRegulerData(RegulerData regulerData) {
+
+        int mPositif = regulerData.getUpdatedData().getTotalCases().getmPositif();
+        int mMeninggal = regulerData.getUpdatedData().getTotalCases().getmMeninggal();
+        int mSembuh = regulerData.getUpdatedData().getTotalCases().getmSembuh();
+        int mODP = regulerData.getDerivativeData().getmODP();
+        int mAddedPos = regulerData.getUpdatedData().getNewCases().getmPositif();
+        int mAddedMen = regulerData.getUpdatedData().getNewCases().getmMeninggal();
+        int mAddedSem = regulerData.getUpdatedData().getNewCases().getmSembuh();
+        String mUpdate = regulerData.getUpdatedData().getNewCases().getmWaktuUpdate();
+
+        mStatPositiveCases.setText(numberSeparator(mPositif));
+        mStatDeathCases.setText(numberSeparator(mMeninggal));
+        mStatCuredCases.setText(numberSeparator(mSembuh));
+        mStatMonitoringCases.setText(numberSeparator(mODP));
+        mStatAddedPositive.setText("+" + numberSeparator(mAddedPos));
+        mStatAddedDeath.setText("+" + numberSeparator(mAddedMen));
+        mStatAddedCured.setText("+" + numberSeparator(mAddedSem));
+
+        if (loadLocale.getLocale().equals("en")) {
+            mUpdatedDate.setText("Updated on: " + mUpdate);
+        } else {
+            mUpdatedDate.setText("Diperbarui pada: " + mUpdate);
+        }
+
+    }
+
+    private void hideRegularDataLoading() {
+        mBoxShimmer.setVisibility(View.GONE);
+        mBoxLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void showRegularDataLoading() {
+        mBoxShimmer.setVisibility(View.VISIBLE);
+        mBoxLayout.setVisibility(View.GONE);
+    }
     private void hideLoading() {
         mNewsShimmer.stopShimmer();
         mNewsShimmer.setVisibility(View.GONE);
@@ -160,6 +241,8 @@ public class HomeFragment extends Fragment {
         mNewsShimmer.setVisibility(View.VISIBLE);
         mNewsRecyclerView.setVisibility(View.GONE);
     }
-
+    private String numberSeparator(int value) {
+        return String.valueOf(NumberFormat.getNumberInstance(Locale.ITALY).format(value));
+    }
 
 }

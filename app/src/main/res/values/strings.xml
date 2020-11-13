@@ -32,13 +32,11 @@
     <string name="maps_title">Kasus Per Provinsi</string>
 
     <!--    FRAGMENT STATS STRING ASSET -->
-    <string name="stat_title">Kasus Covid-19 Di Indonesia</string>
-    <string name="stat_subtitle">Total Kasus Hingga Hari Ini</string>
+    <string name="stat_subtitle">Total Kasus Hingga Hari Ini di Indonesia</string>
     <string name="stat_positive">Positif</string>
     <string name="stat_death">Meninggal</string>
     <string name="stat_cured">Sembuh</string>
     <string name="stat_monitoring">ODP</string>
-    <string name="stat_patient">PDP</string>
 
 
     <!--    INFO WINDOW PROV STRING ASSET-->
@@ -59,7 +57,6 @@
        Ini Aplikasi
     </string>
     <string name="menu_home">Beranda</string>
-    <string name="menu_stats">Total</string>
     <string name="menu_maps">Peta</string>
     <string name="menu_info">Informasi</string>
 </resources>
