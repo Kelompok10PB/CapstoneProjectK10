@@ -21,7 +21,12 @@
     <string name="stat_death">Death</string>
     <string name="stat_cured">Cured</string>
     <string name="stat_monitoring">Monitoring</string>
-
+    <string name="alarm_on_toast">Stand Up Alarm On!</string>
+    <string name="alarm_off_toast">Stand Up Alarm Off!</string>
+    <string name="notification_title">Stand Up Alert</string>
+    <string name="notification_text">You should stand up and walk around now!</string>
+    <string name="alarm_off">Alarm off</string>
+    <string name="alarm_on">Alarm on</string>
     <string name="info_window_prov_cases">"Cases: "</string>
     <string name="info_window_prov_death">"Death: "</string>
     <string name="info_window_prov_cured">"Cured: "</string>

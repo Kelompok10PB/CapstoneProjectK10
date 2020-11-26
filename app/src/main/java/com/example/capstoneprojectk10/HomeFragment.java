@@ -1,20 +1,29 @@
 package com.example.capstoneprojectk10;
 
+import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -38,11 +47,49 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+import android.widget.ToggleButton;
+import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.MenuItem;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
+import static android.content.Context.ALARM_SERVICE;
+import static android.content.Context.NOTIFICATION_SERVICE;
+import static androidx.core.content.ContextCompat.getSystemService;
 import static com.example.capstoneprojectk10.R.id;
 import static com.example.capstoneprojectk10.R.layout;
 
@@ -52,7 +99,11 @@ public class HomeFragment extends Fragment {
     private ArrayList<String> mNewsURL = new ArrayList<>();
 
     private LoadLocale loadLocale;
-
+    public static final long INTERVAL_1Menit = 60000L;
+    private NotificationManager mNotificationManager;
+    private static final int NOTIFICATION_ID = 0;
+    private static final String PRIMARY_CHANNEL_ID =
+            "primary_notification_channel";
     @BindView(R.id.stat_kasus_aktif)
     TextView mStatPositiveCases;
     @BindView(R.id.stat_kasus_meninggal) TextView mStatDeathCases;
@@ -77,16 +128,20 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.info_language_button)
     LinearLayout mLanguage;
 
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(layout.fragment_home, container, false);
+        View fragmentView = inflater.inflate(layout.fragment_home, container, false);
         Toast mToast = Toast.makeText(getContext(), "", Toast.LENGTH_LONG);
-        ButterKnife.bind(this, view);
+        ButterKnife.bind(this, fragmentView);
         loadLocale = new LoadLocale(getActivity());
         LoadLocale loadLocale = new LoadLocale(getActivity());
         Timber.d("LoadLocale%s", loadLocale.getLocale());
+
+
+
 
         // Give the language option on the fresh install app
         if (loadLocale.getLocale().equals("-1")) {
@@ -175,7 +230,7 @@ public class HomeFragment extends Fragment {
 
                 NewsAdapter newsAdapter = new NewsAdapter(mNewsImage, mNewsTitle, mNewsURL, getContext());
                 mNewsRecyclerView.setAdapter(newsAdapter);
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(fragmentView.getContext(), LinearLayoutManager.HORIZONTAL, false);
                 mNewsRecyclerView.setLayoutManager(linearLayoutManager);
                 mNewsRecyclerView.addItemDecoration(new SpacesItemDecoration(30));
                 SnapHelper snapHelper = new PagerSnapHelper();
@@ -191,9 +246,95 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        return view;
+        mNotificationManager = (NotificationManager)getActivity().getSystemService(NOTIFICATION_SERVICE);
+        final AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
+        ToggleButton alarmToggle = fragmentView.findViewById(R.id.alarmToggle);
+
+
+
+        Intent notifyIntent = new Intent(getContext(), AlarmReceiver.class);
+        boolean alarmUp;
+        alarmUp = (PendingIntent.getBroadcast(getContext(), NOTIFICATION_ID,
+                notifyIntent, PendingIntent.FLAG_NO_CREATE) != null);
+        alarmToggle.setChecked(alarmUp);
+
+        final PendingIntent notifyPendingIntent = PendingIntent.getBroadcast
+                (getContext(), NOTIFICATION_ID, notifyIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+        alarmToggle.setOnCheckedChangeListener
+                (new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton compoundButton,
+                                                 boolean isChecked) {
+                        String toastMessage;
+                        if (isChecked) {
+
+                            long repeatInterval = MainActivity.INTERVAL_1Menit;
+
+                            long triggerTime = SystemClock.elapsedRealtime()
+                                    + repeatInterval;
+
+                            if (alarmManager != null) {
+                                alarmManager.setInexactRepeating
+                                        (AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                                                triggerTime, repeatInterval,
+                                                notifyPendingIntent);
+                            }
+
+                            toastMessage = getString(R.string.alarm_on_toast);
+
+                        } else {
+
+                            mNotificationManager.cancelAll();
+
+                            if (alarmManager != null) {
+                                alarmManager.cancel(notifyPendingIntent);
+                            }
+                            toastMessage = getString(R.string.alarm_off_toast);
+
+                        }
+
+                        Toast.makeText(getActivity(), toastMessage,Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                });
+
+
+        createNotificationChannel();
+
+        return fragmentView;
+
 
     }
+
+
+
+
+    private void createNotificationChannel() {
+        // Create a notification manager object.
+        mNotificationManager =
+                (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
+
+        if (android.os.Build.VERSION.SDK_INT >=
+                android.os.Build.VERSION_CODES.O) {
+
+            NotificationChannel notificationChannel = new NotificationChannel
+                    (PRIMARY_CHANNEL_ID,
+                            "Stand up notification",
+                            NotificationManager.IMPORTANCE_HIGH);
+
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setDescription("Ayo Buka Covid-19 Untuk Berita Covid Terkini");
+            mNotificationManager.createNotificationChannel(notificationChannel);
+        }
+
+    }
+
+
 
     private void showRegulerData(RegulerData regulerData) {
 
