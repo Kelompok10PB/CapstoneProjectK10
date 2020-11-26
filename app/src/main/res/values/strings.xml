@@ -8,7 +8,12 @@
     <!--    WEB VIEW STRING ASSET-->
     <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Laman sedang dimuat...</string>
 
-
+    <string name="alarm_on_toast">Notifikasi Aktif!</string>
+    <string name="alarm_off_toast">Notifikasi Non Aktif!</string>
+    <string name="notification_title">COVID-19</string>
+    <string name="notification_text">Pantau Terus Covid-19 Dengan Berita Terbaru</string>
+    <string name="alarm_off">off</string>
+    <string name="alarm_on"> on</string>
     <!--    FRAGMENT HOME STRING ASSET-->
     <string name="home_header">Apakah kamu merasa sesuatu yang aneh?</string>
     <string name="home_desc">Jika kamu merasakan sesuatu berkaitan dengan gejala covid-19, segera hubungi layanan darurat agar segera ditangani.</string>

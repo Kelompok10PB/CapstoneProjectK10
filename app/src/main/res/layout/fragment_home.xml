@@ -16,11 +16,25 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <ToggleButton
+                android:id="@+id/alarmToggle"
+                android:layout_width="61dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_alarm"
+                android:button="@drawable/ic_stat_notif"
+                android:textColor="#ffff"
+                android:textOff="@string/alarm_off"
+                android:textOn="@string/alarm_on" />
+
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/rounded_header">
 
@@ -38,67 +52,67 @@
                         android:background="@drawable/rounded_header"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="10dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/home_title"
-                            android:textColor="@color/white"
-                            android:textSize="22sp"
-                            android:textStyle="bold" />
-
                         <LinearLayout
-                            android:id="@+id/info_language_button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:background="@drawable/rounded_country"
-                            android:backgroundTint="@android:color/white"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:gravity="center"
-                            android:orientation="horizontal"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="6dp"
-                                android:src="@drawable/icon_language"
-                                tools:ignore="ContentDescription" />
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/home_title"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/info_language_button"
                                 android:layout_width="wrap_content"
                                 android:layout_height="fill_parent"
                                 android:layout_gravity="center"
-                                android:layout_marginRight="6dp"
+                                android:background="@drawable/rounded_country"
+                                android:backgroundTint="@android:color/white"
+                                android:clickable="true"
+                                android:focusable="true"
                                 android:gravity="center"
-                                android:text="@string/info_lang_title"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
+                                android:orientation="horizontal"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp">
 
-                            <ImageView
-                                android:layout_width="14dp"
-                                android:layout_height="14dp"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="6dp"
-                                android:src="@drawable/icon_arrow_down"
-                                tools:ignore="ContentDescription" />
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="6dp"
+                                    android:src="@drawable/icon_language"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="6dp"
+                                    android:gravity="center"
+                                    android:text="@string/info_lang_title"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="6dp"
+                                    android:src="@drawable/icon_arrow_down"
+                                    tools:ignore="ContentDescription" />
 
 
+                            </LinearLayout>
                         </LinearLayout>
-                    </LinearLayout>
                     </LinearLayout>
 
                     <TableRow
@@ -203,7 +217,7 @@
                         </LinearLayout>
 
                     </TableRow>
-c
+                    c
                 </TableLayout>
 
             </RelativeLayout>

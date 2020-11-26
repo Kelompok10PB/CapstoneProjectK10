@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
-    // Set Timer selama 1.2 Second
-    private static int SPLASH_TIME_OUT = 1200;
+    // Set Timer selama 3 Second
+    private static int SPLASH_TIME_OUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

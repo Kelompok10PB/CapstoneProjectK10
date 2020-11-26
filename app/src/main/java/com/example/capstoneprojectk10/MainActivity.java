@@ -1,19 +1,40 @@
 package com.example.capstoneprojectk10;
-
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -25,6 +46,11 @@ import java.util.Objects;
 import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
+    public static final long INTERVAL_1Menit = 60000L;
+    private NotificationManager mNotificationManager;
+    private static final int NOTIFICATION_ID = 0;
+    private static final String PRIMARY_CHANNEL_ID =
+            "primary_notification_channel";
 
     final Fragment homeFragment = new HomeFragment();
     final Fragment mapsFragment = new MapsFragment();
@@ -32,9 +58,11 @@ public class MainActivity extends AppCompatActivity {
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
     Fragment active = homeFragment;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         if (BuildConfig.DEBUG) {
         }
         super.onCreate(savedInstanceState);
@@ -42,11 +70,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-            bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
     }
-
     public void loadLocale() {
         SharedPreferences sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         String language = sharedPreferences.getString("language", "");
@@ -71,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_home:
                             fragment = new HomeFragment();
                             break;
+
                         case R.id.nav_maps:
                             fragment = new MapsFragment();
                             break;
