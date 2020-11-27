@@ -31,8 +31,25 @@
     <string name="info_title">Informasi</string>
     <string name="info_desc" translatable="false">Versi 1.1 © Covid-19 App 2020</string>
     <string name="info_desc2">Dikembangkan oleh K10</string>
+    <string name="info_acknowledgement">Ucapan Terima Kasih</string>
+    <string name="info_ack1">Data informasi oleh data.covid19.go.id</string>
+    <string name="info_ack4">Data berita oleh newsapi.org</string>
+    <string name="info_term">Pengunaan</string>
+
+    <string name="about">
+        Aplikasi ini dimaksudkan untuk memenuhi tugas besar "Capstone Project" mata kuliah Pemrograman Bergerak (Mobile Programming)
+        Segala data yang berhubungan dengan data Covid-19 di aplikasi ini diambil dari situs resmi Covid-19 pemerintah
+        Indonesia (covid19.go.id).
+    </string>
 
 
+    <string name="infokami">
+     Tentang Kami :
+    </string>
+
+    <string name="kelompok">
+    https://github.com/Kelompok10PB/CapstoneProjectK10
+    </string>
     <!--    FRAGMENT MAPS STRING ASSET-->
     <string name="maps_title">Kasus Per Provinsi</string>
 
@@ -57,10 +74,7 @@
     <!--    PROVINCE LAYOUT STRING ASSET-->
     <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Cari provinsi ...</string>
 
-    <!--    PREVENTIVE STRING ASSET-->
-    <string name="about">
-       Ini Aplikasi
-    </string>
+
     <string name="menu_home">Beranda</string>
     <string name="menu_maps">Peta</string>
     <string name="menu_info">Informasi</string>
