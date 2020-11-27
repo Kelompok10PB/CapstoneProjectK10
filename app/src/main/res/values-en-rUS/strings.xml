@@ -39,11 +39,28 @@
     <string name="menu_home">Home</string>
     <string name="menu_maps">Maps</string>
     <string name="menu_info">Information</string>
+    <string name="info_acknowledgement">Acknowledgement</string>
+    <string name="info_ack1">Data Information from data.covid19.go.id</string>
+    <string name="info_ack4">News data provided by newsapi.org</string>
+    <string name="info_term">Term and Condition</string>
+
 
     <!--    PREVENTIVE STRING ASSET-->
     <string name="about">
- App
+     This application is available to fulfill the big assignment "Capstone Project" in Mobile Programming course.
+All data related to Covid-19 data in this application is taken from the official Covid-19 government website
+        Indonesia (covid19.go.id).
     </string>
+
+    <string name="infokami">
+     About US :
+    </string>
+
+    <string name="kelompok">
+   https://github.com/Kelompok10PB/CapstoneProjectK10
+    </string>
+
+
 
 
 </resources>
