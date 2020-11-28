@@ -39,7 +39,6 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.example.capstoneprojectk10.adapter.NewsAdapter;
 import com.example.capstoneprojectk10.api.newsData.NewsData;
 import com.example.capstoneprojectk10.util.LoadLocale;
-import com.example.capstoneprojectk10.util.SetLanguage;
 import com.example.capstoneprojectk10.util.SpacesItemDecoration;
 import com.example.capstoneprojectk10.vm.NewsDataViewModel;
 
@@ -140,14 +139,6 @@ public class HomeFragment extends Fragment {
         LoadLocale loadLocale = new LoadLocale(getActivity());
         Timber.d("LoadLocale%s", loadLocale.getLocale());
 
-
-
-
-        // Give the language option on the fresh install app
-        if (loadLocale.getLocale().equals("-1")) {
-            new SetLanguage(getContext(), getActivity());
-        }
-
         mCallButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -239,13 +230,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        mLanguage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new SetLanguage(getContext(), getActivity());
-            }
-        });
-
         mNotificationManager = (NotificationManager)getActivity().getSystemService(NOTIFICATION_SERVICE);
         final AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
         ToggleButton alarmToggle = fragmentView.findViewById(R.id.alarmToggle);
@@ -271,7 +255,7 @@ public class HomeFragment extends Fragment {
                         String toastMessage;
                         if (isChecked) {
 
-                            long repeatInterval = MainActivity.INTERVAL_1Menit;
+                            long repeatInterval = HomeFragment.INTERVAL_1Menit;
 
                             long triggerTime = SystemClock.elapsedRealtime()
                                     + repeatInterval;

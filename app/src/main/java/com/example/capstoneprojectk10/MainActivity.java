@@ -46,11 +46,6 @@ import java.util.Objects;
 import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
-    public static final long INTERVAL_1Menit = 60000L;
-    private NotificationManager mNotificationManager;
-    private static final int NOTIFICATION_ID = 0;
-    private static final String PRIMARY_CHANNEL_ID =
-            "primary_notification_channel";
 
     final Fragment homeFragment = new HomeFragment();
     final Fragment mapsFragment = new MapsFragment();
@@ -66,26 +61,13 @@ public class MainActivity extends AppCompatActivity {
         if (BuildConfig.DEBUG) {
         }
         super.onCreate(savedInstanceState);
-        loadLocale();
+
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
-    }
-    public void loadLocale() {
-        SharedPreferences sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String language = sharedPreferences.getString("language", "");
-        Resources resources = getResources();
-        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        Configuration configuration = resources.getConfiguration();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            configuration.setLocale(new Locale(language.toLowerCase()));
-        } else {
-            configuration.locale = new Locale(language.toLowerCase());
-        }
-        resources.updateConfiguration(configuration,displayMetrics);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
