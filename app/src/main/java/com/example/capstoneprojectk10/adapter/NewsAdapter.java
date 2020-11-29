@@ -21,11 +21,9 @@ import java.util.ArrayList;
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     private static final String TAG = "NewsAdapter";
-
     private ArrayList<String> mNewsImage = new ArrayList<>();
     private ArrayList<String> mNewsTitle = new ArrayList<>();
     private ArrayList<String> mNewsURL = new ArrayList<>();
-
     private Context context;
 
     public NewsAdapter(ArrayList<String> mNewsImage, ArrayList<String> mNewsTitle, ArrayList<String> mNewsURL, Context context) {
@@ -34,7 +32,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         this.mNewsURL = mNewsURL;
         this.context = context;
     }
-
 
     public NewsAdapter(ArrayList<String> mNewsImage, ArrayList<String> mNewsTitle, Context context) {
         this.mNewsImage = mNewsImage;

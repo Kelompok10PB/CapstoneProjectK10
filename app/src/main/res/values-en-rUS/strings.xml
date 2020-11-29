@@ -13,20 +13,21 @@
     <string name="home_preventive2">Clean Your Hand Often</string>
     <string name="home_preventive3">Wear a Face Mask</string>
     <string name="info_title">Information</string>
-    <string name="info_desc2">Developed by</string>
-    <string name="info_lang_title">Language</string>
+    <string name="info_desc2">Developed by K10</string>
     <string name="maps_title">Case per Province</string>
     <string name="stat_subtitle">Cases Summary in Indonesia</string>
     <string name="stat_positive">Positive</string>
     <string name="stat_death">Death</string>
     <string name="stat_cured">Cured</string>
     <string name="stat_monitoring">Monitoring</string>
+
     <string name="alarm_on_toast">A notification will appear if the application is not opened for 1 Day!</string>
     <string name="alarm_off_toast">Notifications have been turned off!</string>
     <string name="notification_title">Covid-19 App</string>
     <string name="notification_text">Monitor Covid-19 With the Latest News!</string>
-    <string name="alarm_off">Alarm off</string>
-    <string name="alarm_on">Alarm on</string>
+    <string name="alarm_off">OFF</string>
+    <string name="alarm_on">ON</string>
+
     <string name="info_window_prov_cases">"Cases: "</string>
     <string name="info_window_prov_death">"Death: "</string>
     <string name="info_window_prov_cured">"Cured: "</string>
@@ -36,16 +37,15 @@
     <string name="info_window_prov_sex">"Sex: "</string>
     <string name="info_window_prov_age">"Age: "</string>
     <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Search Province...</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_maps">Maps</string>
     <string name="menu_info">Information</string>
+
     <string name="info_acknowledgement">Acknowledgement</string>
     <string name="info_ack1">Data Information from data.covid19.go.id</string>
     <string name="info_ack4">News data provided by newsapi.org</string>
     <string name="info_term">Term and Condition</string>
-
-
-    <!--    PREVENTIVE STRING ASSET-->
     <string name="about">
      This application is available to fulfill the big assignment "Capstone Project" in Mobile Programming course.
 All data related to Covid-19 data in this application is taken from the official Covid-19 government website
@@ -59,8 +59,5 @@ All data related to Covid-19 data in this application is taken from the official
     <string name="kelompok">
    https://github.com/Kelompok10PB/CapstoneProjectK10
     </string>
-
-
-
 
 </resources>

@@ -57,31 +57,24 @@ public class ProvAdapter extends RecyclerView.Adapter<ProvAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-
         return provListData.size();
-
     }
 
     public void filterList(ArrayList<ProvData.ProvListData> filteredList) {
-
         provListData = filteredList;
         notifyDataSetChanged();
-
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         LinearLayout mProvListLayout;
-
         TextView mProvName, mProvCase, mProvDeath, mProvHealed, mProvTreated;
-
         ListClickedListener mListClickedListener;
 
         public ViewHolder(@NonNull View itemView, ListClickedListener listClickedListener) {
             super(itemView);
 
             mProvListLayout = itemView.findViewById(R.id.prov_list_layout);
-
             mProvName = itemView.findViewById(R.id.prov_name);
             mProvCase = itemView.findViewById(R.id.prov_case);
             mProvDeath = itemView.findViewById(R.id.prov_death);
@@ -89,7 +82,6 @@ public class ProvAdapter extends RecyclerView.Adapter<ProvAdapter.ViewHolder> {
             mProvTreated = itemView.findViewById(R.id.prov_treated);
 
             mListClickedListener = listClickedListener;
-
         }
     }
 
