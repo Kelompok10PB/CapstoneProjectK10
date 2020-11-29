@@ -60,4 +60,10 @@ All data related to Covid-19 data in this application is taken from the official
    https://github.com/Kelompok10PB/CapstoneProjectK10
     </string>
 
+    <string name="sql_edittext">   Write Here...</string>
+    <string name="sql_desc">Write down here what you want to save</string>
+    <string name="sql_button_add">Add</string>
+    <string name="sql_button_list">List</string>
+    <string name="sql_button_delete">Delete</string>
+    <string name="sql_button_save">Save</string>
 </resources>

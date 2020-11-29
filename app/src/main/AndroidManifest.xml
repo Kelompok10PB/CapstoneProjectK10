@@ -20,13 +20,30 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.example.capstoneprojectk10.CatatActivity"
+            android:label="Tambah Data"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.example.capstoneprojectk10.InfoFragment"/>
+
+        <activity
+            android:name="com.example.capstoneprojectk10.ListDataActivity"
+            android:label="Tambah Data"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.example.capstoneprojectk10.CatatActivity"/>
+
+
+        <activity android:name="com.example.capstoneprojectk10.EditDataActivity"
+            android:label="Tambah Data"
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.example.capstoneprojectk10.ListDataActivity"/>
+
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyC_cdMQEFXboyvzXe478qnPJZOctfklu9Y"/>
 
         <activity android:name=".WebViewActivity"/>
         <activity android:name=".MainActivity"/>
-
         <receiver
             android:name=".AlarmReceiver"
             android:enabled="true"

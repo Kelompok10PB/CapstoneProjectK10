@@ -74,4 +74,11 @@
     <string name="menu_home">Beranda</string>
     <string name="menu_maps">Peta</string>
     <string name="menu_info">Informasi</string>
+
+    <string name="sql_edittext">   Tulis Disini...</string>
+    <string name="sql_desc">Tulis Apapun yang Ada ingin Simpan Disini</string>
+    <string name="sql_button_add">Tambah</string>
+    <string name="sql_button_list">List</string>
+    <string name="sql_button_delete">Hapus</string>
+    <string name="sql_button_save">Simpan</string>
 </resources>
