@@ -8,9 +8,9 @@
     <!--    WEB VIEW STRING ASSET-->
     <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Laman sedang dimuat...</string>
 
-    <string name="alarm_on_toast">Notifikasi Aktif!</string>
-    <string name="alarm_off_toast">Notifikasi Non Aktif!</string>
-    <string name="notification_title">COVID-19</string>
+    <string name="alarm_on_toast">Notifikasi akan muncul jika aplikasi tidak dibuka selama 1 Hari Penuh!</string>
+    <string name="alarm_off_toast">Notifikasi telah dimatikan!</string>
+    <string name="notification_title">COVID-19 App</string>
     <string name="notification_text">Pantau Terus Covid-19 Dengan Berita Terbaru</string>
     <string name="alarm_off">off</string>
     <string name="alarm_on"> on</string>
@@ -29,7 +29,7 @@
     <!--    FRAGMENT INFO STRING ASSET-->
     <string name="info_lang_title">Bahasa</string>
     <string name="info_title">Informasi</string>
-    <string name="info_desc" translatable="false">Versi 1.1 © Covid-19 App 2020</string>
+    <string name="info_desc" translatable="false">Versi 1.1 ©️ Covid-19 App 2020</string>
     <string name="info_desc2">Dikembangkan oleh K10</string>
     <string name="info_acknowledgement">Ucapan Terima Kasih</string>
     <string name="info_ack1">Data informasi oleh data.covid19.go.id</string>

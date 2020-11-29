@@ -63,9 +63,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="fill_parent"
                                 android:layout_gravity="center"
-                                android:background="@drawable/rounded_country"
-
-                                android:backgroundTint="@android:color/holo_red_light"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:gravity="center"
@@ -75,10 +72,10 @@
 
                                 <ToggleButton
                                     android:id="@+id/alarmToggle"
-                                    android:layout_width="61dp"
-                                    android:layout_height="38dp"
-                                    android:backgroundTint="@android:color/holo_red_light"
-                                    android:background="@drawable/rounded_alarm"
+                                    android:layout_width="62dp"
+                                    android:layout_height="30dp"
+
+                                    android:background="@drawable/rounded_website_button"
                                     android:button="@drawable/ic_stat_notif"
                                     android:textColor="#ffff"
                                     android:textOff="@string/alarm_off"

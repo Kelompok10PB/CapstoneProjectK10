@@ -98,7 +98,7 @@ public class HomeFragment extends Fragment {
     private ArrayList<String> mNewsURL = new ArrayList<>();
 
     private LoadLocale loadLocale;
-    public static final long INTERVAL_1Menit = 60000L;
+    public static final long INTERVAL_1Menit = 86400000L;
     private NotificationManager mNotificationManager;
     private static final int NOTIFICATION_ID = 0;
     private static final String PRIMARY_CHANNEL_ID =

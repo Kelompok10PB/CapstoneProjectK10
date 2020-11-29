@@ -21,10 +21,10 @@
     <string name="stat_death">Death</string>
     <string name="stat_cured">Cured</string>
     <string name="stat_monitoring">Monitoring</string>
-    <string name="alarm_on_toast">Stand Up Alarm On!</string>
-    <string name="alarm_off_toast">Stand Up Alarm Off!</string>
-    <string name="notification_title">Stand Up Alert</string>
-    <string name="notification_text">You should stand up and walk around now!</string>
+    <string name="alarm_on_toast">A notification will appear if the application is not opened for 1 Day!</string>
+    <string name="alarm_off_toast">Notifications have been turned off!</string>
+    <string name="notification_title">Covid-19 App</string>
+    <string name="notification_text">Monitor Covid-19 With the Latest News!</string>
     <string name="alarm_off">Alarm off</string>
     <string name="alarm_on">Alarm on</string>
     <string name="info_window_prov_cases">"Cases: "</string>
