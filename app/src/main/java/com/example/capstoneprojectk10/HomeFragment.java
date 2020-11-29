@@ -1,10 +1,8 @@
 package com.example.capstoneprojectk10;
 
-import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -23,7 +21,6 @@ import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -41,56 +38,22 @@ import com.example.capstoneprojectk10.api.newsData.NewsData;
 import com.example.capstoneprojectk10.util.LoadLocale;
 import com.example.capstoneprojectk10.util.SpacesItemDecoration;
 import com.example.capstoneprojectk10.vm.NewsDataViewModel;
+import static com.example.capstoneprojectk10.R.id;
+import static com.example.capstoneprojectk10.R.layout;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
 import android.os.SystemClock;
-import android.widget.CompoundButton;
-import android.widget.Toast;
-import android.widget.ToggleButton;
-import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.MenuItem;
-import android.widget.CompoundButton;
-import android.widget.Toast;
-import android.widget.ToggleButton;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
 import static android.content.Context.ALARM_SERVICE;
 import static android.content.Context.NOTIFICATION_SERVICE;
-import static androidx.core.content.ContextCompat.getSystemService;
-import static com.example.capstoneprojectk10.R.id;
-import static com.example.capstoneprojectk10.R.layout;
+
 
 public class HomeFragment extends Fragment {
     private ArrayList<String> mNewsImage = new ArrayList<>();
@@ -98,11 +61,13 @@ public class HomeFragment extends Fragment {
     private ArrayList<String> mNewsURL = new ArrayList<>();
 
     private LoadLocale loadLocale;
+
     public static final long INTERVAL_1Menit = 86400000L;
     private NotificationManager mNotificationManager;
     private static final int NOTIFICATION_ID = 0;
     private static final String PRIMARY_CHANNEL_ID =
             "primary_notification_channel";
+
     @BindView(R.id.stat_kasus_aktif)
     TextView mStatPositiveCases;
     @BindView(R.id.stat_kasus_meninggal) TextView mStatDeathCases;
@@ -126,7 +91,6 @@ public class HomeFragment extends Fragment {
     LinearLayout mWebsiteButton;
     @BindView(R.id.info_language_button)
     LinearLayout mLanguage;
-
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Nullable
@@ -234,8 +198,6 @@ public class HomeFragment extends Fragment {
         final AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
         ToggleButton alarmToggle = fragmentView.findViewById(R.id.alarmToggle);
 
-
-
         Intent notifyIntent = new Intent(getContext(), AlarmReceiver.class);
         boolean alarmUp;
         alarmUp = (PendingIntent.getBroadcast(getContext(), NOTIFICATION_ID,
@@ -245,7 +207,6 @@ public class HomeFragment extends Fragment {
         final PendingIntent notifyPendingIntent = PendingIntent.getBroadcast
                 (getContext(), NOTIFICATION_ID, notifyIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
-
 
         alarmToggle.setOnCheckedChangeListener
                 (new CompoundButton.OnCheckedChangeListener() {
@@ -268,9 +229,8 @@ public class HomeFragment extends Fragment {
                             }
 
                             toastMessage = getString(R.string.alarm_on_toast);
-
-                        } else {
-
+                        }
+                        else {
                             mNotificationManager.cancelAll();
 
                             if (alarmManager != null) {
@@ -279,21 +239,14 @@ public class HomeFragment extends Fragment {
                             toastMessage = getString(R.string.alarm_off_toast);
 
                         }
-
                         Toast.makeText(getActivity(), toastMessage,Toast.LENGTH_SHORT)
                                 .show();
                     }
                 });
 
-
         createNotificationChannel();
-
         return fragmentView;
-
-
     }
-
-
 
 
     private void createNotificationChannel() {
@@ -317,8 +270,6 @@ public class HomeFragment extends Fragment {
         }
 
     }
-
-
 
     private void showRegulerData(RegulerData regulerData) {
 

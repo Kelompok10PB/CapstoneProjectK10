@@ -4,16 +4,16 @@
     <!--    GLOBAL STRING ASSET-->
     <string name="null_text" translatable="false">Tidak Diketahui</string>
     <string name="loading_text" tools:ignore="TypographyEllipsis">Memuat...</string>
-
-    <!--    WEB VIEW STRING ASSET-->
     <string name="web_view_loading_page" tools:ignore="TypographyEllipsis">Laman sedang dimuat...</string>
 
+    <!--    ALARM STRING ASSET-->
     <string name="alarm_on_toast">Notifikasi akan muncul jika aplikasi tidak dibuka selama 1 Hari Penuh!</string>
     <string name="alarm_off_toast">Notifikasi telah dimatikan!</string>
     <string name="notification_title">COVID-19 App</string>
     <string name="notification_text">Pantau Terus Covid-19 Dengan Berita Terbaru</string>
     <string name="alarm_off">off</string>
     <string name="alarm_on"> on</string>
+
     <!--    FRAGMENT HOME STRING ASSET-->
     <string name="home_header">Apakah kamu merasa sesuatu yang aneh?</string>
     <string name="home_desc">Jika kamu merasakan sesuatu berkaitan dengan gejala covid-19, segera hubungi layanan darurat agar segera ditangani.</string>
@@ -27,21 +27,18 @@
     <string name="home_title">Stay Safe</string>
 
     <!--    FRAGMENT INFO STRING ASSET-->
-    <string name="info_lang_title">Bahasa</string>
     <string name="info_title">Informasi</string>
-    <string name="info_desc" translatable="false">Versi 1.1 ©️ Covid-19 App 2020</string>
+    <string name="info_desc" translatable="false">Versi 1.4 ©️ Covid-19 App 2020</string>
     <string name="info_desc2">Dikembangkan oleh K10</string>
     <string name="info_acknowledgement">Ucapan Terima Kasih</string>
     <string name="info_ack1">Data informasi oleh data.covid19.go.id</string>
     <string name="info_ack4">Data berita oleh newsapi.org</string>
     <string name="info_term">Pengunaan</string>
-
     <string name="about">
         Aplikasi ini dimaksudkan untuk memenuhi tugas besar "Capstone Project" mata kuliah Pemrograman Bergerak (Mobile Programming)
         Segala data yang berhubungan dengan data Covid-19 di aplikasi ini diambil dari situs resmi Covid-19 pemerintah
         Indonesia (covid19.go.id).
     </string>
-
 
     <string name="infokami">
      Tentang Kami :
@@ -50,6 +47,7 @@
     <string name="kelompok">
     https://github.com/Kelompok10PB/CapstoneProjectK10
     </string>
+
     <!--    FRAGMENT MAPS STRING ASSET-->
     <string name="maps_title">Kasus Per Provinsi</string>
 
@@ -59,7 +57,6 @@
     <string name="stat_death">Meninggal</string>
     <string name="stat_cured">Sembuh</string>
     <string name="stat_monitoring">ODP</string>
-
 
     <!--    INFO WINDOW PROV STRING ASSET-->
     <string name="info_window_prov_cases">"Kasus: "</string>
@@ -73,7 +70,6 @@
 
     <!--    PROVINCE LAYOUT STRING ASSET-->
     <string name="prov_layout_search" tools:ignore="TypographyEllipsis">Cari provinsi ...</string>
-
 
     <string name="menu_home">Beranda</string>
     <string name="menu_maps">Peta</string>

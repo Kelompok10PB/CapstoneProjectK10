@@ -52,7 +52,6 @@ public class NewsDataRepository {
         });
 
         return NewsData;
-
     }
 
     public MutableLiveData<NewsData> getNewsDataEn() {
@@ -74,7 +73,6 @@ public class NewsDataRepository {
                 });
 
         return NewsData;
-
     }
     
 }

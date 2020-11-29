@@ -14,7 +14,7 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NotifActivity extends AppCompatActivity {
-    public static final long INTERVAL_1Menit = 60000L;
+    public static final long INTERVAL_1Menit = 86400000L;
     private NotificationManager mNotificationManager;
     private static final int NOTIFICATION_ID = 0;
     private static final String PRIMARY_CHANNEL_ID =
