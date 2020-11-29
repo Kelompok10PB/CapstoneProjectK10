@@ -1,5 +1,6 @@
 package com.example.capstoneprojectk10;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.content.Context;
@@ -49,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_home:
                             fragment = new HomeFragment();
                             break;
-
                         case R.id.nav_maps:
                             fragment = new MapsFragment();
                             break;
